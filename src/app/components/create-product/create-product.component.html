@@ -1,0 +1,7 @@
+<form [formGroup]="form" (ngSubmit)="Submit()">
+  <input formControlName="title" type="text" class="border w-full py-2 px-4 mb-2" placeholder="Product name" appFocus>
+  <p class="text-red-600 font-medium mb-2" *ngIf="form_info[0].errors && form_info[0].touched">Title length is too short: {{form_info[0].value.length}}</p>
+  <input formControlName="price" type="number" class="border w-full py-2 px-4 mb-2" placeholder="Price">
+  <p class="text-red-600 font-medium mb-2" *ngIf="form_info[1].errors && form_info[1].touched">Price not valid</p>
+  <button class="py-2 px-4 bg-blue-600 text-white" type="submit">Create</button>
+</form>
